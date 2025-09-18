@@ -35,11 +35,7 @@ const movies: Movie[] = [
   }
 ];
 
-let compteur = 0;
-
 router.get("/",(_req, res) => {
-    compteur++;
-    console.log(`GET counter : ${compteur}`);
     return res.json(movies);
 })
 
