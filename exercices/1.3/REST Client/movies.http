@@ -1,1 +1,28 @@
-@baseURL = http:localhost:3000
+@baseUrl = http://localhost:3000
+
+### Read all movies
+GET http://localhost:3000/movies
+
+
+### Read all movies with variable
+GET {{baseUrl}}/movies
+
+### Reads a movie by its ID
+GET {{baseUrl}}/movies/2
+
+### Reads all movies with a minimum duration of 134 minutes
+GET {{baseUrl}}/movies/?minimum-duration=134
+
+### Adds a new movie
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "duration": 148,
+  "budget": 0,
+  "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+  "imageUrl": "https://image.tmdb.org/t/p/inception.jpg"
+}
+

@@ -65,8 +65,39 @@ router.post("/", (req, res) =>{
     !("title" in body) ||
     !("director" in body) ||
     !("duration" in body) ||
-    
-  )
+    typeof body.title !== "string" ||
+    typeof body.director !== "string" ||
+    typeof body.duration !== "number" ||
+    ("budget" in body && typeof body.budget !== "number") ||
+    ("description" in body && typeof body.description !== "string") ||
+    ("imageUrl" in body && typeof body.imageUrl !== "string")
+  ) {
+    return res.sendStatus(400);
+  }
+
+  if ("duration" in body && body.duration <= 0) {
+    res.json("Wrong minimum duration");
+    return res.sendStatus(400);
+  }
+
+  if ("budget" in body && Number(body.budget) <= 0) {
+    res.json("Wrong budget");
+    return res.sendStatus(400);
+  }
+  const nextId = movies.length > 0 ? movies.length + 1 : 1;
+
+  const newMovie: Movie = {
+    id: nextId,
+    title: body.title,
+    director: body.director,
+    duration: body.duration,
+    budget: "budget" in body ? (body.budget as number) : 0,
+    description: "description" in body ? (body.description as string) : "No description",
+    imageUrl: "imageUrl" in body ? (body.imageUrl as string) : "No image"
+  };
+
+  movies.push(newMovie);
+  return res.status(201).json(newMovie);
 });
 
 export default router;

@@ -5,7 +5,7 @@ interface Movie {
   duration: number;
   budget?: number;
   description?: string;
-  imageUrl?: string;
+  imageUrl?: string ;
 }
 
 
