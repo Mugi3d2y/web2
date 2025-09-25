@@ -1,0 +1,50 @@
+@baseUrl = http://localhost:3000
+
+### Read all movies
+GET http://localhost:3000/movies
+
+
+### Read all movies with variable
+GET {{baseUrl}}/movies
+
+### Reads a movie by its ID
+GET {{baseUrl}}/movies/2
+
+### Reads all movies with a minimum duration of 134 minutes
+GET {{baseUrl}}/movies/?minimum-duration=134
+
+### Adds a new movie
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "duration": 148,
+  "budget": 20,
+  "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+  "imageUrl": "https://image.tmdb.org/t/p/inception.jpg"
+}
+
+
+### Reads a movie that doesn't exists
+GET {{baseUrl}}/movies/8
+
+
+### Adds a movie that already exists
+POST {{baseUrl}}/movies
+Content-Type: application/json
+
+{
+  "title": "The Matrix",
+  "director": "The Wachowskis",
+  "duration": 136,
+  "budget": 63000000,
+  "description": "A computer hacker learns about the true nature of his reality and his role in the war against its controllers.",
+  "imageUrl": "https://image.tmdb.org/t/p/matrix.jpg"
+}
+
+
+### Delete the movie by id
+DELETE {{baseUrl}}/movies/1
+
