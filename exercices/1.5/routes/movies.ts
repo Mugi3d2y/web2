@@ -48,12 +48,15 @@ router.get("/",(req, res) => {
 
 
 router.get("/:id", (req, res) => {
-  if(!("id" in req.params)){
-    return res.sendStatus(400);
-  }
   const id = Number(req.params.id);
-  const movie = movies.filter((m) => m.id === id);
-    return res.json(movie);
+  if (isNaN(id)) return res.sendStatus(400);
+
+  const movie:Movie | undefined = movies.find((m) => m.id === id);
+  if(!movie){
+    return res.sendStatus(404);
+  }
+
+  return res.json(movie);
 });
 
 
@@ -90,6 +93,13 @@ router.post("/", (req, res) =>{
     description: inputMovie.description,
     imageUrl: inputMovie.imageUrl
   };
+
+  const existingMovie: Movie | undefined = movies.find((movie) => movie.title.trim() === newMovie.title.trim() && movie.director.trim() === newMovie.director.trim());
+  
+  
+  if(!existingMovie){
+    return res.sendStatus(409);
+  }
 
   movies.push(newMovie);
   return res.status(201).json(newMovie);
