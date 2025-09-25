@@ -21,7 +21,7 @@ Content-Type: application/json
   "title": "Inception",
   "director": "Christopher Nolan",
   "duration": 148,
-  "budget": 0,
+  "budget":0,
   "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
   "imageUrl": "https://image.tmdb.org/t/p/inception.jpg"
 }
