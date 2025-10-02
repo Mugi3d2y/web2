@@ -2,7 +2,7 @@ import { Router } from "express";
 import { Movie } from "../types";
 import path from "node:path";
 import { parse, serialize } from "../utils/json";
-const jsdonDbPath = path.join("/../data/movies.json");
+const jsdonDbPath = path.join(__dirname, "/../data/movies.json");
 
 
 const router = Router();
@@ -108,7 +108,7 @@ router.post("/", (req, res) =>{
 
   movies.push(newMovie);
   serialize(jsdonDbPath,movies);
-  return res.status(201).json(newMovie);
+  return res.status(200).json(newMovie);
 });
 
 router.delete("/:id",(req,res) =>{
