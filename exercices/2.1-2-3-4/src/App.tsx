@@ -1,14 +1,14 @@
 import './App.css'
 
 
-  interface HeaderProps {
+  interface PageTitleProps {
     title:string
   }
 
-const Header = (props: HeaderProps) => {
+const PageTitle = (props: PageTitleProps) => {
   return (
     <header>
-      <h1 className="animate_animated animate_bounce">{props.title}</h1>
+      <h1 className="keyframes">{props.title}</h1>
     </header>
   )
 }
@@ -19,9 +19,9 @@ const Header = (props: HeaderProps) => {
   }
   
   interface CinemaProps {
-      name:string,
-      movies:MovieProps[],
-    }
+    name:string,
+    movies:MovieProps[],
+  }
 
   const Cinema = (props: CinemaProps) => {
     return (
@@ -67,7 +67,7 @@ const App = () => {
 
   return (
     <div>
-      <Header title={pageTitle}/>
+      <PageTitle title={pageTitle}/>
       <Cinema name={cinema1.name} movies={cinema1.movies}/>
       <Cinema name={cinema2.name} movies={cinema2.movies}/>
     </div>
