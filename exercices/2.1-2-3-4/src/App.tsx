@@ -27,8 +27,8 @@ const Cinema = (props: CinemaProps) => {
     <section>
       <h2>{props.name}</h2>
       <ul>
-        {props.movies.map((movie) => (
-          <li>
+        {props.movies.map((movie, index) => (
+          <li key={index}>
             <strong>{movie.title}</strong> - Réalisateur : {movie.director}
           </li>
         ))}
@@ -41,24 +41,40 @@ const App = () => {
   const pageTitle = "Informations sur les films dans les cinémas";
   const movies1: MovieProps[] = [
     {
-      title: "Film 1 - DeBrouckère",
-      director: "Director A",
-    },
-    {
-      title: "Film 2 - DeBrouckère",
-      director: "Director B",
-    },
+    title: "HAIKYU-THE DUMPSTER BATTLE",
+    director: "Susumu Mitsunaka",
+  },
+  {
+    title: "GOODBYE JULIA",
+    director: "Mohamed Kordofani",
+  },
+  {
+    title: "INCEPTION",
+    director: "Christopher Nolan",
+  },
+  {
+    title: "PARASITE",
+    director: "Bong Joon-ho",
+  },
   ];
   const cinema1: CinemaProps = { name: "UGC DeBrouckère", movies: movies1 };
   const movies2: MovieProps[] = [
     {
-      title: "Film 1 - Toison d'Or",
-      director: "Director C",
-    },
-    {
-      title: "Film 2 - Toison d'Or",
-      director: "Director D",
-    },
+    title: "THE WATCHERS",
+    director: "Ishana Night Shyamalan",
+  },
+  {
+    title: "BAD BOYS: RIDE OR DIE",
+    director: "Adil El Arbi, Bilall Fallah",
+  },
+  {
+    title: "TENET",
+    director: "Christopher Nolan",
+  },
+  {
+    title: "THE IRISHMAN",
+    director: "Martin Scorsese",
+  },
   ];
   const cinema2: CinemaProps = { name: "UGC Toison d'Or", movies: movies2 };
 
