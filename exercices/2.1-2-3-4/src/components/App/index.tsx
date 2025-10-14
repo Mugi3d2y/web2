@@ -1,4 +1,7 @@
 import "./App.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import logo from "../../assets/cinema_background.jpg";
 
 interface PageTitleProps {
   title: string;
@@ -9,7 +12,7 @@ const PageTitle = (props: PageTitleProps) => {
     <header>
       <h1 className="keyframes">{props.title}</h1>
     </header>
-  );
+  )
 };
 
 interface MovieProps {
@@ -34,7 +37,7 @@ const Cinema = (props: CinemaProps) => {
         ))}
       </ul>
     </section>
-  );
+  )
 };
 
 const App = () => {
@@ -80,11 +83,17 @@ const App = () => {
 
   return (
     <div>
+      <Header image={logo}>
+      <h1>Bienvenue</h1>
+      </Header>
       <PageTitle title={pageTitle} />
       <Cinema name={cinema1.name} movies={cinema1.movies} />
       <Cinema name={cinema2.name} movies={cinema2.movies} />
+      <Footer title="© 2024 - Tous droits réservés">
+        <p>Merci de votre visite !</p>
+      </Footer>
     </div>
-  );
+  )
 };
 
 export default App;
