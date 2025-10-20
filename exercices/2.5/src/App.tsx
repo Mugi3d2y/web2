@@ -6,7 +6,8 @@ import './App.css'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [isUpperThan10, setIsUpperThan10] = useState(false);
 
   const handleCounterClick = () => {
     console.log(`value of counterClick before click; ${count}`);
