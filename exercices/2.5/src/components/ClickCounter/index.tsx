@@ -1,4 +1,4 @@
-import { useInsertionEffect, useState } from 'react';
+import { useState } from 'react';
 import './clickCounter.css';
 
 
