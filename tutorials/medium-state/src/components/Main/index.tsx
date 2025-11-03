@@ -5,6 +5,7 @@ import PizzaMenu from "./PizzaMenu.tsx";
 //import DrinkCard from "./DrinkCard.tsx";
 import type { SyntheticEvent } from "react";
 import { useState } from "react";
+import type { Pizza } from '../../../types.ts';
 
 const defaultPizzas = [
   {
@@ -38,12 +39,17 @@ const Main = () => {
 
   const [pizza, setPizza] = useState("");
   const [description, setDescription] = useState("");
-  const [pizzas] = useState(defaultPizzas);
+  const [pizzas, setPizzas] = useState(defaultPizzas);
 
   const handleSubmit = (e: SyntheticEvent) => {
-    //e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    console.log("submit:", form.pizza.value, form.description.value);
+    e.preventDefault();
+    console.log("submit:", pizza, description);
+    const newPizza = {
+      id: nextPizzaId(pizzas),
+      title: pizza,
+      content:description,
+    };
+    setPizzas([...pizzas,newPizza]);
   };
 
   const handlePizzaChange = (e: SyntheticEvent) => {
@@ -86,5 +92,9 @@ const Main = () => {
   );
 };
 
+
+const nextPizzaId = (pizzas: Pizza[]) => {
+  return pizzas.reduce((maxId,pizza) => Math.max(maxId,pizza.id),0) +1;
+};
 
 export default Main
