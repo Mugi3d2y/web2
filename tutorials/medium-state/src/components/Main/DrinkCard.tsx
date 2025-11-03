@@ -1,4 +1,4 @@
-import "./DrinkMenu.css";
+import "./DrinkMenu.css"
 
 interface DrinkCardProps {
   title: string;
@@ -11,7 +11,7 @@ const DrinkCard = ({image, title, children}: DrinkCardProps) => {
     <div className="drink-card">
       <img src={image} alt={title} className="drink-image" width="50"/>
       <h2>{title}</h2>
-      <div className="drink-details">{children}</div>
+      <div className="drink-details"><p>{children}</p></div>
     </div>
   );
 };

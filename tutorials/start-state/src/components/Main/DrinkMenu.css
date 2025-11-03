@@ -1,0 +1,57 @@
+.drink-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;  
+}
+
+.drink-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Style pour que chaque DrinkCard ait une largeur fixe */
+.drink-items > * {
+    min-width: 300px;
+    flex-shrink: 0;
+}
+
+/* Styles pour les cartes de boissons */
+.drink-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    text-align: center;
+    width: 300px;
+}
+
+.drink-card h2 {
+    margin: 0;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.drink-details {
+    width: 100%;
+}
+
+.drink-details p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #666;
+}
+

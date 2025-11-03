@@ -1,4 +1,4 @@
-import "./DrinkMenu.css";
+import "./DrinkMenu.css"
 
 interface DrinkMenuProps {
   title: string;
@@ -7,7 +7,7 @@ interface DrinkMenuProps {
 
 const DrinkMenu = (props: DrinkMenuProps) => {
   return (
-    <div className="drink-menu">
+      <div className="drink-menu">
       <h4>{props.title}</h4>
       <div className="drink-items">{props.children}</div>
     </div>
