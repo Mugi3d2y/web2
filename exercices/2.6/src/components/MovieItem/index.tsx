@@ -12,7 +12,6 @@ const MovieItem = ({title,director,description} : MovieProps) => {
     }
     return <>
             <strong>{title}</strong> - Réalisateur : {director}
-            <br/>
             <button onClick={handleOnClick}>...
                 {onClick === true ? <p>{description}</p> : null}
             </button>
