@@ -1,5 +1,6 @@
-import "./PizzaMenu.css";
 import type { Pizza } from "../../../types.ts";
+import "./PizzaMenu.css";
+
 
 interface PizzaMenuProps {
   pizzas: Pizza[];

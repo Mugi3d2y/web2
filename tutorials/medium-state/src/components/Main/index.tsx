@@ -79,7 +79,7 @@ const Main = () => {
       <PizzaMenu pizzas={pizzas}/>
 
       <div>
-        <br />
+        <
         <form onSubmit={handleSubmit}>
           <label htmlFor="pizza">Pizza</label>
           <input value={pizza} type="text" id="pizza" name="pizza" onChange={handlePizzaChange} />
