@@ -39,7 +39,7 @@ const ClickCounter = ({title,messageIfUpperThan10: message, messageIfMouseHoverO
             Edit <code>src/App.tsx</code> and save to test HMR
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default ClickCounter

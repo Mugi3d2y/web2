@@ -1,0 +1,12 @@
+main {
+  text-align: center;
+  /*to easily deal with sticky footer:
+     grow the main to fill the space*/
+  flex: 1 0 auto;
+  background: transparent !important;
+}
+
+/* Rendre tous les conteneurs MUI transparents */
+main .MuiContainer-root {
+  background: transparent !important;
+}
