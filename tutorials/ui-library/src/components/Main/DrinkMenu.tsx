@@ -21,7 +21,7 @@ const DrinkMenu: React.FC<DrinkMenuProps> = ({ title, drinks }) => {
       </Typography>
       <Grid container spacing={3}>
         {drinks.map((drink, index) => (
-          <Grid xs={12} sm={6} key={index}>
+          <div key={index}>
             <Card>
               <CardMedia
                 component="img"
@@ -41,7 +41,7 @@ const DrinkMenu: React.FC<DrinkMenuProps> = ({ title, drinks }) => {
                 </Typography>
               </CardContent>
             </Card>
-          </Grid>
+          </div>
         ))}
       </Grid>
     </Container>

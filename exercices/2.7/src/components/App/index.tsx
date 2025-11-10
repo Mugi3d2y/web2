@@ -85,7 +85,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="main-title">🎥 CinéThèque</h1>
+      <h1 className="main-title">⚡ CinéThèque ⚡</h1>
       
       <div className="content-wrapper">
         <div className="films-section">
@@ -114,10 +114,10 @@ function App() {
           </ul>
         </div>
         
-        <div className='form-section'>
+        <div className="form-section">
           <h2 className="section-title">➕ Ajouter un Film</h2>
-          <div className='film-form'>
-            <form className='film-content' onSubmit={handleSubmit}>
+          <div className="film-form">
+            <form className="film-content" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="film" className="form-label">Titre du Film</label>
                 <input 
@@ -127,7 +127,7 @@ function App() {
                   className="form-input" 
                   onChange={handleTitleChange}
                   value={title}
-                  placeholder="Ex: Le Parrain"
+                  placeholder="Ex: Blade Runner"
                   required
                 />
               </div>
@@ -141,7 +141,7 @@ function App() {
                   className="form-input" 
                   onChange={handleDirectorChange}
                   value={director}
-                  placeholder="Ex: Francis Ford Coppola"
+                  placeholder="Ex: Ridley Scott"
                   required
                 />
               </div>
@@ -155,14 +155,14 @@ function App() {
                   className="form-input" 
                   onChange={handleDurationChange}
                   value={duration || ''}
-                  placeholder="Ex: 175"
+                  placeholder="Ex: 117"
                   min="1"
                   required
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="link" className="form-label">Lien vers l'affiche (optionnel)</label>
+                <label htmlFor="link" className="form-label">Lien vers l'affiche</label>
                 <input 
                   type="url" 
                   name='link' 
@@ -175,20 +175,20 @@ function App() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="description" className="form-label">Description (optionnel)</label>
+                <label htmlFor="description" className="form-label">Description</label>
                 <textarea 
                   name='description' 
                   id='description' 
                   className="form-input form-textarea" 
                   onChange={handleDescriptionChange}
                   value={description}
-                  placeholder="Ex: Un chef-d'œuvre du cinéma qui raconte l'histoire de la famille Corleone..."
+                  placeholder="Ex: Un film de science-fiction dystopique..."
                   rows={4}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="budget" className="form-label">Budget en $ (optionnel)</label>
+                <label htmlFor="budget" className="form-label">Budget en $</label>
                 <input 
                   type="number" 
                   name='budget' 
@@ -196,13 +196,13 @@ function App() {
                   className="form-input" 
                   onChange={handleBudgetChange}
                   value={budget || ''}
-                  placeholder="Ex: 6000000"
+                  placeholder="Ex: 28000000"
                   min="0"
                 />
               </div>
 
               <button type='submit' className="submit-btn">
-                ✨ Ajouter à ma collection
+                ⚡ AJOUTER ⚡
               </button>
             </form>
           </div>
