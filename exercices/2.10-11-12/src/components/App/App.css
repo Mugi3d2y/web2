@@ -1,0 +1,248 @@
+/* Design Professionnel & Épuré */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: linear-gradient(135deg, #7c83af 0%, #464e8b 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background: transparent;
+}
+
+/* Container principal */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  display: block;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+nav button {
+  margin: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+nav button:hover {
+  background-color: #d21919;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+nav button:active {
+  transform: translateY(1px);
+}
+
+/* Sections */
+.films-section,
+.form-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Liste des films */
+.films-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.film-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid #2196F3;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.film-card:hover {
+  border-left-color: #1976D2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.film-title {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.film-info {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+.film-info strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.film-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+  line-height: 1.5;
+}
+
+.film-link {
+  color: #2196F3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.film-link:hover {
+  color: #1976D2;
+  text-decoration: underline;
+}
+
+/* Formulaire */
+.film-form {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.film-content {
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: white;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.form-input:hover {
+  border-color: #999;
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+/* Cache les br mais conserve l'espacement */
+.film-content br {
+  display: block;
+  margin-bottom: 0.25rem;
+  content: "";
+}
+
+.submit-btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.submit-btn:hover {
+  background-color: #1976D2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .film-form {
+    padding: 1.5rem;
+  }
+  
+  .film-card {
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 0.85rem;
+  }
+}
