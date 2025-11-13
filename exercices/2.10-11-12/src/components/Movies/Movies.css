@@ -1,0 +1,263 @@
+header {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(129, 178, 154, 0.15), rgba(242, 204, 143, 0.1));
+  border-radius: 16px;
+  border: 2px solid rgba(129, 178, 154, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #f2cc8f;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #81b29a, #f2cc8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation keyframes pour le titre */
+.keyframes {
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Sections avec design épuré */
+.films-section,
+.form-section {
+  background: linear-gradient(135deg, #3d405b, #2b2d42);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(129, 178, 154, 0.2);
+  margin: 50px;
+}
+
+.films-section:hover,
+.form-section:hover {
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(129, 178, 154, 0.2);
+  transform: translateY(-5px);
+  margin: 0px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f2cc8f;
+  margin-bottom: 2rem;
+  text-align: left;
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #81b29a;
+}
+
+/* Film List Styles - Design moderne */
+.films-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.films-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.films-list::-webkit-scrollbar-track {
+  background: #2b2d42;
+  border-radius: 10px;
+}
+
+.films-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #81b29a, #e07a5f);
+  border-radius: 10px;
+}
+
+.film-card {
+  background: linear-gradient(135deg, #3d405b 0%, #2b2d42 100%);
+  border: 1px solid rgba(129, 178, 154, 0.3);
+  border-left: 5px solid #81b29a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.film-card:hover {
+  transform: translateX(10px);
+  border-left-color: #e07a5f;
+  box-shadow: 0 8px 25px rgba(129, 178, 154, 0.2);
+}
+
+.film-title {
+  font-size: 1.8rem;
+  color: #f2cc8f;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.film-info {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin: 0.7rem 0;
+  line-height: 1.8;
+}
+
+.film-info strong {
+  color: #e8e8e8;
+  font-weight: 600;
+}
+
+.film-description {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(129, 178, 154, 0.2);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.film-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.film-link:hover {
+  color: #2ecc71;
+  text-decoration: underline;
+}
+
+/* Form Styles - Design professionnel */
+.film-form {
+  background: transparent;
+}
+
+.film-content {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-group input, .form-group textarea {
+  background-color: gray;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3498db;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+.form-input::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .film-card {
+    padding: 1rem;
+  }
+
+  .film-title {
+    font-size: 1.3rem;
+  }
+}

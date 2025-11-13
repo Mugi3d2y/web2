@@ -1,11 +1,11 @@
-import { useNavigate, Outlet } from 'react-router-dom'
-import './App.css'
-import Footer from "../Footer"
-import Header from "../Header"
+import { useNavigate, Outlet } from 'react-router-dom';
+import './App.css';
+import Footer from "../Footer";
+import Header from "../Header";
 import MoviesPage from "../Movies";
-import logo from "../../assets/cinema_background.jpg"
-import type { PageTitleProps, CinemaProps } from "../../../types"
-import MovieItem from "../MovieItem"
+import logo from "../../assets/cinema_background.jpg";
+import HomePage from "../Home";
+import CinemasPage from "../Cinemas"
 
 
 const NavBar = () => {
@@ -19,119 +19,6 @@ const NavBar = () => {
   )
 }
 
-
-
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Page d'accueil</h1>
-      <p>iMovies est une application web qui permet d'afficher ses films préférés et d'en rajouter.</p>
-      <p>Mais aussi de lister les différents cinémas de la région.</p>
-    </div>
-  )
-}
-
-
-
-
-
-const CinemasPage = () => {
-
-  const PageTitle = ({title}: PageTitleProps) => {
-    return (
-      <header>
-        <h1 className="keyframes">{title}</h1>
-      </header>
-    )
-  }
-
-  const Cinema = ({name,movies}: CinemaProps) => {
-    return (
-      <section>
-        <h2>{name}</h2>
-        <ul>
-          {movies.map((movie, index) => (
-            <li key={index}>
-              <MovieItem title={movie.title} director={movie.director} description={movie.description} />
-            </li>
-          ))}
-        </ul>
-      </section>
-    )
-  };
-
-
-  const pageTitle = "Informations sur les films dans les cinémas";
-
-  const cinema1 = "UGC De Brouckère";
-
-  const moviesCinema1 = [
-    {
-      title: "HAIKYU-THE DUMPSTER BATTLE",
-      director: "Susumu Mitsunaka",
-      description:
-        "A high-energy sports anime movie focusing on the intense volleyball rivalry between Karasuno High and their fierce competitors.",
-    },
-    {
-      title: "GOODBYE JULIA",
-      director: "Mohamed Kordofani",
-      description:
-        "A poignant drama that explores themes of love, loss, and the complex dynamics of human relationships in a deeply emotional narrative.",
-    },
-    {
-      title: "INCEPTION",
-      director: "Christopher Nolan",
-      description:
-        "A mind-bending sci-fi thriller where a skilled thief, who enters people's dreams to steal secrets, is given a chance to have his criminal record erased if he can implant an idea into a target's subconscious.",
-    },
-    {
-      title: "PARASITE",
-      director: "Bong Joon-ho",
-      description:
-        "An Oscar-winning dark comedy thriller that examines class disparities through the story of two families — one wealthy, the other destitute — and their increasingly complicated relationship.",
-    },
-  ];
-
-  const cinema2 = "UGC Toison d'Or";
-
-  const moviesCinema2 = [
-    {
-      title: "THE WATCHERS",
-      director: "Ishana Night Shyamalan",
-      description:
-        "A suspenseful thriller that follows a group of people who are under constant surveillance, leading them to uncover dark secrets about their observers and themselves.",
-    },
-    {
-      title: "BAD BOYS: RIDE OR DIE",
-      director: "Adil El Arbi, Bilall Fallah",
-      description:
-        "The latest installment in the action-packed Bad Boys franchise, featuring detectives Mike Lowrey and Marcus Burnett as they take on their most dangerous case yet.",
-    },
-    {
-      title: "TENET",
-      director: "Christopher Nolan",
-      description:
-        "A complex and visually stunning sci-fi action film where a protagonist embarks on a time-bending mission to prevent World War III, navigating through a world of temporal inversion.",
-    },
-    {
-      title: "THE IRISHMAN",
-      director: "Martin Scorsese",
-      description:
-        "An epic crime drama that chronicles the life of Frank Sheeran, a mob hitman, as he reflects on his involvement with the Bufalino crime family and the mysterious disappearance of his friend, Jimmy Hoffa.",
-    },
-  ];
-
-  return (
-    <div>
-      <PageTitle title={pageTitle} />
-      <Cinema name={cinema1} movies={moviesCinema1} />
-      <Cinema name={cinema2} movies={moviesCinema2} />
-    </div>
-  )
-};
-
-
-
 function App() {
   
   return (
@@ -141,12 +28,13 @@ function App() {
       </Header>
       <NavBar/>
       <Outlet/>
-      
       <Footer title="© 2024 - Tous droits réservés">
         <p>Merci de votre visite !</p>
       </Footer>
     </>
   )
 }
+
+
 export { HomePage, CinemasPage, MoviesPage }
 export default App
