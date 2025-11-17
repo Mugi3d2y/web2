@@ -17,6 +17,7 @@ Application web moderne pour gérer votre collection de films préférés et dé
 ## 🎨 Design
 
 Le site utilise le thème **"Minuit Élégant"** avec une palette de couleurs raffinée :
+
 - Background : Gradient gris-bleu foncé (`#2b2d42` → `#3d405b`)
 - Accents : Vert menthe (`#81b29a`), Or doré (`#f2cc8f`), Corail (`#e07a5f`)
 - Typographie : Segoe UI, système moderne
@@ -25,23 +26,27 @@ Le site utilise le thème **"Minuit Élégant"** avec une palette de couleurs ra
 ## 🚀 Installation
 
 ### Prérequis
+
 - Node.js (version 18 ou supérieure)
 - npm ou yarn
 
 ### Étapes
 
 1. **Cloner le projet**
+
 ```bash
 git clone https://github.com/Mugi3d2y/web2.git
 cd web2/exercices/2.10-11-12
 ```
 
 2. **Installer les dépendances**
+
 ```bash
 npm install
 ```
 
 3. **Lancer en développement**
+
 ```bash
 npm run dev
 ```
@@ -116,14 +121,16 @@ npm run build
 ### Option 3 : GitHub Pages
 
 Ajoutez dans `vite.config.ts` :
+
 ```ts
 export default defineConfig({
   base: '/web2/',
   // ...
-})
+});
 ```
 
 Puis :
+
 ```bash
 npm run build
 # Déployer le dossier dist/
@@ -140,7 +147,6 @@ Créé avec ❤️ pour le cours de Web 2
 ---
 
 **Note** : Ce projet utilise React 19.1.1 avec les dernières fonctionnalités de TypeScript pour une expérience de développement optimale.
-
 
 ```js
 export default defineConfig([
@@ -167,15 +173,15 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from 'eslint-plugin-react-x';
+import reactDom from 'eslint-plugin-react-dom';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -196,5 +202,5 @@ export default defineConfig([
       // other options...
     },
   },
-])
+]);
 ```

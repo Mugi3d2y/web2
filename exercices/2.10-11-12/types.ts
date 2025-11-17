@@ -1,17 +1,10 @@
-interface Film {
-    title:string;
-    director:string;
-    duration:number;
-    imageLink?:string | null;
-    description?:string | null;
-    budget?:number | null;
-}
-
-
 interface MovieProps {
   title: string;
   director: string;
-  description:string;
+  duration: number;
+  imageLink?: string | null;
+  description?: string | null;
+  budget?: number | null;
 }
 
 interface CinemaProps {
@@ -23,4 +16,10 @@ interface PageTitleProps {
   title: string;
 }
 
-export type {CinemaProps, MovieProps, PageTitleProps, Film};
+interface MovieContext {
+  addMovie: (newMovie: MovieProps) => void;
+  setMovies: (movies: MovieProps[]) => void;
+  movies: MovieProps[];
+}
+
+export type { CinemaProps, MovieProps, PageTitleProps, MovieContext };
