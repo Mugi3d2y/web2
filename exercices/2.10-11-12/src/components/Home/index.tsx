@@ -1,6 +1,12 @@
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import './HomePage.css';
+import type { MovieContext } from '../../../types';
+import MovieDetails from '../pages/MovieDetails.tsx';
 
 const HomePage = () => {
+  const { movies }: MovieContext = useOutletContext();
+  
+  const navigate = useNavigate();
   return (
     <div className="home-page">
       <div className="home-hero">
@@ -32,13 +38,19 @@ const HomePage = () => {
 
       <div className="home-cta">
         <h3>Commencez dès maintenant</h3>
-        <p>
-          Utilisez le menu de navigation ci-dessus pour explorer toutes les
-          fonctionnalités
-        </p>
+        <ul className="films-list">
+          {movies.map((movie) => (
+            <button
+              onClick={() => navigate(`/MovieDetails/${movie.id}`)}
+              className="film-card"
+            >
+              <h3 className="film-title">{movie.title}</h3>
+            </button>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
-
+export { MovieDetails };
 export default HomePage;

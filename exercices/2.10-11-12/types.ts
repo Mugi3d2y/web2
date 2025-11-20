@@ -1,4 +1,5 @@
 interface MovieProps {
+  id: number;
   title: string;
   director: string;
   duration: number;
@@ -19,6 +20,7 @@ interface PageTitleProps {
 interface MovieContext {
   addMovie: (newMovie: MovieProps) => void;
   setMovies: (movies: MovieProps[]) => void;
+  findMovie: (id: Number) => MovieProps | undefined;
   movies: MovieProps[];
 }
 

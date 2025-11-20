@@ -3,7 +3,7 @@
 .home-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 1.5rem 1rem;
 }
 
 .home-hero {
@@ -132,4 +132,51 @@
   .home-page {
     padding: 2rem 1rem;
   }
+}
+
+.films-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.films-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.films-list::-webkit-scrollbar-track {
+  background: #2b2d42;
+  border-radius: 10px;
+}
+
+.films-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #81b29a, #e07a5f);
+  border-radius: 10px;
+}
+
+.film-card {
+  background: linear-gradient(135deg, #3d405b 0%, #2b2d42 100%);
+  border: 1px solid rgba(129, 178, 154, 0.3);
+  border-left: 5px solid #81b29a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.film-card:hover {
+  transform: translateX(10px);
+  border-left-color: #e07a5f;
+  box-shadow: 0 8px 25px rgba(129, 178, 154, 0.2);
+}
+
+.film-title {
+  font-size: 1.8rem;
+  color: #f2cc8f;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }

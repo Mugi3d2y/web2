@@ -23,15 +23,22 @@ const NavBar = () => {
 };
 
 const defaultFilms: MovieProps[] = [
-  { title: 'Inception', director: 'Christopher Nolan', duration: 148 },
-  { title: 'The Matrix', director: 'The Wachowskis', duration: 136 },
-  { title: 'Interstellar', director: 'Christopher Nolan', duration: 169 },
+  { id: 1, title: 'Inception', director: 'Christopher Nolan', duration: 148 },
+  { id: 2, title: 'The Matrix', director: 'The Wachowskis', duration: 136 },
   {
+    id: 3,
+    title: 'Interstellar',
+    director: 'Christopher Nolan',
+    duration: 169,
+  },
+  {
+    id: 4,
     title: 'The Shawshank Redemption',
     director: 'Frank Darabont',
     duration: 142,
   },
   {
+    id: 5,
     title: 'Pulp Fiction',
     director: 'Quentin Tarantino',
     duration: 154,
@@ -48,9 +55,14 @@ function App() {
     setMovies([...movies, newMovie]);
   };
 
+  const findMovie = (id: Number) => {
+    return movies.find((m) => m.id === id);
+  };
+
   const fullMoviePage: MovieContext = {
     addMovie,
     setMovies,
+    findMovie,
     movies,
   };
   return (
