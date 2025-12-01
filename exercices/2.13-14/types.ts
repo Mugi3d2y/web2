@@ -1,5 +1,5 @@
 interface Joke {
-    status:string;
+    category:string;
     delivery:string;
 }
 
