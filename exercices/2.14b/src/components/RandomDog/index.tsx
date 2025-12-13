@@ -3,12 +3,18 @@ import "./RandomDog.css";
 import type { Image } from "../../../types";
 
 const RandomDog = () => {
-  const [image, setImage] = useState<Image>();
+  const [image, setImage] = useState<Image | undefined>(undefined);
 
   useEffect(() => {
     fetchDogImage();
+
+    const interval = setInterval(() => {
+      fetchDogImage();
+    },5000);
+    return () => clearInterval(interval);
   }, []);
   const fetchDogImage = async () => {
+    setImage(undefined); // Efface l'ancienne image avant de charger la nouvelle
     try {
       const response = await fetch("https://dog.ceo/api/breeds/image/random");
 
