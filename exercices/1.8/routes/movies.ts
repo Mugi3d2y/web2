@@ -49,7 +49,6 @@ router.post("/", (req, res) =>{
   const inputMovie = body as Movie;
 
   const movie = createOneMovie(inputMovie);
-  console.log("The movie which has been created is : ", movie);
   
   if(!movie){
     return res.sendStatus(409);
