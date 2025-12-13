@@ -57,13 +57,11 @@ function readOneMovie(id : number): Movie | undefined{
 function createOneMovie(newMovie : NewMovie): Movie | undefined{
     const movies = parse(jsdonDbPath, defaultMovies);
 
-    const nextId = movies.length;
-    
-    const createdMovie = {
-        id: nextId,
+    const nextId = Number(movies.length+1);
+    const createdMovie: Movie = {
         ...newMovie,
+        id: nextId,
     };
-
     const existingMovie: Movie | undefined = movies.find((movie) => movie.title.trim() === createdMovie.title.trim() && movie.director.trim() === createdMovie.director.trim());
     if(existingMovie){
         return undefined;
