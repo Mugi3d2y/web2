@@ -85,7 +85,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="main-title">⚡ CinéThèque ⚡</h1>
+      <h1 className="main-title">🎬 Ma Cinémathèque</h1>
       
       <div className="content-wrapper">
         <div className="films-section">
@@ -202,7 +202,7 @@ function App() {
               </div>
 
               <button type='submit' className="submit-btn">
-                ⚡ AJOUTER ⚡
+                📥 Ajouter à ma collection
               </button>
             </form>
           </div>

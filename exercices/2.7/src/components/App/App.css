@@ -1,5 +1,5 @@
 
-/* Design Cyberpunk Neon 🌃 */
+/* Design Professionnel Moderne 💼 */
 
 * {
   margin: 0;
@@ -10,90 +10,39 @@
 #root {
   width: 100%;
   min-height: 100vh;
-  padding: 2rem;
-  background: #0a0e27;
-  background-image: 
-    radial-gradient(at 40% 20%, rgba(255, 0, 128, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(0, 255, 255, 0.15) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(138, 43, 226, 0.15) 0px, transparent 50%);
-  font-family: 'Courier New', monospace;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
   overflow-x: hidden;
 }
 
-#root::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 255, 255, 0.03) 0px,
-    rgba(0, 255, 255, 0.03) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Main Title avec effet glitch */
+/* Main Title professionnel */
 .main-title {
   text-align: center;
-  font-size: 5rem;
-  font-weight: 900;
-  color: #00ffff;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #2c3e50;
   margin-bottom: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: 2px;
   position: relative;
-  text-shadow: 
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 30px #00ffff,
-    0 0 40px #ff00ff,
-    2px 2px 0px #ff00ff,
-    -2px -2px 0px #00ff00;
-  animation: glitch 3s infinite;
   z-index: 2;
 }
 
-@keyframes glitch {
-  0%, 100% {
-    text-shadow: 
-      0 0 10px #00ffff,
-      0 0 20px #00ffff,
-      0 0 30px #00ffff,
-      0 0 40px #ff00ff,
-      2px 2px 0px #ff00ff,
-      -2px -2px 0px #00ff00;
-  }
-  25% {
-    text-shadow: 
-      0 0 10px #ff00ff,
-      0 0 20px #ff00ff,
-      0 0 30px #ff00ff,
-      0 0 40px #00ffff,
-      -2px 2px 0px #00ffff,
-      2px -2px 0px #ffff00;
-  }
-  50% {
-    text-shadow: 
-      0 0 10px #00ff00,
-      0 0 20px #00ff00,
-      0 0 30px #00ff00,
-      0 0 40px #ff00ff,
-      2px -2px 0px #ff00ff,
-      -2px 2px 0px #00ffff;
-  }
+.main-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
 /* Container principal */
 .app-container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -101,72 +50,43 @@
 
 .content-wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
-/* Sections avec effet néon */
+/* Sections avec design épuré */
 .films-section,
 .form-section {
-  background: rgba(10, 14, 39, 0.8);
-  border: 2px solid #00ffff;
-  border-radius: 0;
-  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
   box-shadow: 
-    0 0 20px rgba(0, 255, 255, 0.3),
-    inset 0 0 20px rgba(0, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  position: relative;
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
 }
 
-.films-section::before,
-.form-section::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00, #ffff00);
-  border-radius: 0;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.films-section:hover::before,
-.form-section:hover::before {
-  opacity: 0.3;
-  animation: borderGlow 2s linear infinite;
-}
-
-@keyframes borderGlow {
-  0%, 100% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(180deg);
-  }
+.films-section:hover,
+.form-section:hover {
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.12),
+    0 5px 15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
 }
 
 .section-title {
   font-size: 2rem;
-  font-weight: 700;
-  color: #ff00ff;
+  font-weight: 600;
+  color: #2c3e50;
   margin-bottom: 2rem;
   text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 4px;
   position: relative;
-  padding-left: 1rem;
-  border-left: 4px solid #00ffff;
-  text-shadow: 
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #3498db;
 }
 
-/* Film List Styles - Style Matrix */
+/* Film List Styles - Design moderne */
 .films-list {
   list-style: none;
   padding: 0;
@@ -177,104 +97,81 @@
 }
 
 .films-list::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 .films-list::-webkit-scrollbar-track {
-  background: rgba(0, 255, 255, 0.1);
+  background: #f1f3f5;
+  border-radius: 10px;
 }
 
 .films-list::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00ffff, #ff00ff);
-  border-radius: 0;
-  box-shadow: 0 0 10px #00ffff;
+  background: linear-gradient(180deg, #3498db, #2ecc71);
+  border-radius: 10px;
 }
 
 .film-card {
-  background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
-  border: 1px solid #00ffff;
-  border-left: 4px solid #ff00ff;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+  border-left: 5px solid #3498db;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
   transition: all 0.3s ease;
-  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-}
-
-.film-card::before {
-  content: '>';
-  position: absolute;
-  left: -2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #00ffff;
-  font-size: 2rem;
-  opacity: 0;
-  transition: all 0.3s;
+  position: relative;
 }
 
 .film-card:hover {
-  transform: translateX(20px);
-  border-color: #ff00ff;
-  box-shadow: 
-    0 0 20px rgba(255, 0, 255, 0.5),
-    inset 0 0 20px rgba(0, 255, 255, 0.1);
-}
-
-.film-card:hover::before {
-  opacity: 1;
-  left: -1rem;
+  transform: translateX(10px);
+  border-left-color: #2ecc71;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
 }
 
 .film-title {
   font-size: 1.8rem;
-  color: #00ffff;
+  color: #2c3e50;
   margin-bottom: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #00ffff;
+  font-weight: 600;
 }
 
 .film-info {
   font-size: 1.1rem;
-  color: #b0e0e6;
-  margin: 0.5rem 0;
+  color: #5a6c7d;
+  margin: 0.7rem 0;
   line-height: 1.8;
-  font-family: 'Courier New', monospace;
 }
 
 .film-info strong {
-  color: #ff00ff;
-  text-shadow: 0 0 5px #ff00ff;
+  color: #34495e;
+  font-weight: 600;
 }
 
 .film-description {
   font-size: 1rem;
-  color: #98fb98;
+  color: #7f8c8d;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 255, 255, 0.3);
-  line-height: 1.7;
+  border-top: 1px solid #e9ecef;
+  line-height: 1.8;
   font-style: italic;
 }
 
 .film-link {
-  color: #ffff00;
+  color: #3498db;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px #ffff00;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .film-link:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-  transform: scale(1.1);
+  color: #2ecc71;
+  text-decoration: underline;
 }
 
-/* Form Styles - Terminal style */
+/* Form Styles - Design professionnel */
 .film-form {
   background: transparent;
 }
@@ -284,95 +181,66 @@
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
-  position: relative;
+  margin-bottom: 1.8rem;
 }
 
 .form-label {
   display: block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #00ffff;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: 'Courier New', monospace;
-}
-
-.form-label::before {
-  content: '> ';
-  color: #ff00ff;
+  color: #34495e;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
 }
 
 .form-input {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
   font-size: 1rem;
-  border: 2px solid #00ffff;
-  border-radius: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #00ffff;
-  font-family: 'Courier New', monospace;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #2c3e50;
   transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #ff00ff;
-  box-shadow: 
-    0 0 10px rgba(255, 0, 255, 0.5),
-    inset 0 0 10px rgba(0, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.7);
+  border-color: #3498db;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
 }
 
 .form-input::placeholder {
-  color: rgba(0, 255, 255, 0.4);
+  color: #adb5bd;
   font-style: italic;
 }
 
 .form-textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
+  line-height: 1.6;
 }
 
 .submit-btn {
   width: 100%;
   padding: 1.2rem 2rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0a0e27;
-  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-family: 'Courier New', monospace;
-  position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-}
-
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.submit-btn:hover::before {
-  left: 100%;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
-  box-shadow: 
-    0 0 20px rgba(0, 255, 255, 0.8),
-    0 0 40px rgba(255, 0, 255, 0.8);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
 }
 
 .submit-btn:active {
