@@ -10,18 +10,26 @@ function App() {
   
 
   const [joke, setJoke] = useState<Joke|undefined>(undefined);
+
   useEffect(() => {
-    fetch("https://v2.jokeapi.dev/joke/Any?type=single")
-    .then((response) => {
-      if(!response.ok) throw new Error( `fetch error : ${response.status} : ${response.statusText}`);
-      return response.json();
-    }).then((joke) => setJoke({
-      category: joke?.category,
-      delivery: joke?.joke,
-    }))
-    .catch((err) => {
-      console.log("API::error: ", err);
-    })
+
+
+    const interval = setInterval(() => {
+      fetch("https://v2.jokeapi.dev/joke/Any?type=single")
+          .then((response) => {
+            if(!response.ok) throw new Error( `fetch error : ${response.status} : ${response.statusText}`);
+            return response.json();
+          }).then((joke) => setJoke({
+            category: joke?.category,
+            delivery: joke?.joke,
+          }))
+          .catch((err) => {
+            console.log("API::error: ", err);
+          })
+    },10000);
+
+    return () => clearInterval(interval);
+    
   },[]);
   return (
     <>
