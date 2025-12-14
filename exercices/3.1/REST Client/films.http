@@ -1,0 +1,9 @@
+@baseUrl = http://localhost:3000
+
+
+### Read all films
+GET {{baseUrl}}/films
+
+
+### Read one film by id
+GET {{baseUrl}}/films/1
